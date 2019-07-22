@@ -1,0 +1,30 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Vehiculos Estacionados</h3>
+    </div>
+    <div class="body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Placa</th>
+            <th>Propietario</th>
+            <th>Fecha Entrada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of tickets" >
+            <td>{{ ticket.vehiculo.tipoId }}</td>
+            <td>{{ ticket.vehiculo.vehiculoPlaca }}</td>
+            <td>{{ ticket.usuario.userNombre }} {{ticket.usuario.userApellido }}</td>
+            <td>{{ ticket.estacionamiento.parkingFechaEntrada }}</td>
+            <td>
+              <button (click)="registrarSalidaEstacionamiento(ticket.vehiculo.vehiculoPlaca)" class="btn btn-warning">Generar Salida</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

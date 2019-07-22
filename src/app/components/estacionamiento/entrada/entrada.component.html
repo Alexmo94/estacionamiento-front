@@ -1,0 +1,44 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Ingresar vehiculo al Estacionamiento</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">Ingresar Placa</label>
+          <input type="text" type="text" id="lblPlacaVehiculo" class="form-control">
+        </div>
+        <button (click)="buscarVehiculo()" class="btn btn-danger">Buscar Vehiculo</button>
+      </form>
+    </div>
+  </div>
+  <ng-container *ngIf="validaInfo">
+    <div class="card">
+      <div class="card-header">
+        <h3>Datos del Vehiculo</h3>
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col">Vehiculo Id</div>
+            <div class="col">{{ vehiculo.vehiculoId }}</div>
+            <div class="w-100"></div>
+            <div class="col">Placa</div>
+            <div class="col">{{ vehiculo.vehiculoPlaca }}</div>
+            <div class="w-100"></div>
+            <div class="col">Cilindraje</div>
+            <div class="col">{{ vehiculo.vehiculoCilindraje }}</div>
+            <div class="w-100"></div>
+            <div class="col">Propietario</div>
+            <div class="col">{{ usuario.userNombre }} {{ usuario.userApellido }}</div>
+            <div class="w-100"></div>
+            <div class="col">Tipo Vehiculo</div>            
+            <div class="col">{{ tipo.tipoDesc }}</div>
+          </div>
+        </div>
+        <button (click)="ingresarVehiculoEstacionamiento()" class="btn btn-danger">Ingresar Vehiculo</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
